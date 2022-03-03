@@ -8,7 +8,6 @@ import {
 import styles from "./FlexWrap.module.css";
 
 // Interfaces
-
 export interface MousePosition {
   x: number;
   y: number;
@@ -27,6 +26,7 @@ export interface FlexWrapProps {
   resizeHandlerStyles?: CSSProperties[];
   spinHandlerStyle?: CSSProperties;
   wrapperStyles?: CSSProperties;
+  className?: string;
   draggable?: boolean;
   spinnable?: boolean;
   resizable?: boolean;
@@ -140,6 +140,7 @@ const FlexWrap: FunctionComponent<FlexWrapProps> = ({
   resizeHandlerStyles = defaultResizeHandlerStyles,
   spinHandlerStyle = defaultSpinHandlerStyle,
   wrapperStyles = {},
+  className = "",
   draggable = true,
   spinnable = true,
   resizable = true,
@@ -264,7 +265,7 @@ const FlexWrap: FunctionComponent<FlexWrapProps> = ({
   return (
     <div
       ref={Wrapper}
-      className={`${styles.unselectable}`}
+      className={`${className} ${styles.unselectable}`}
       // Handle Mouse
       onMouseDown={() => {
         if (!isTouchDevice()) {
