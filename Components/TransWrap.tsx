@@ -5,7 +5,7 @@ import {
   useRef,
   useState,
 } from "react";
-import styles from "./FlexWrap.module.css";
+import styles from "./TransWrap.module.css";
 
 // Interfaces
 export interface MousePosition {
@@ -21,7 +21,7 @@ export interface Position {
   left: string;
 }
 
-export interface FlexWrapProps {
+export interface TransWrapProps {
   position?: Position;
   resizeHandlerStyles?: CSSProperties[];
   spinHandlerStyle?: CSSProperties;
@@ -134,7 +134,7 @@ const defaultSpinHandlerStyle: CSSProperties = {
 };
 
 // The Component
-const FlexWrap: FunctionComponent<FlexWrapProps> = ({
+const TransWrap: FunctionComponent<TransWrapProps> = ({
   children,
   position = defaultPosition,
   resizeHandlerStyles = defaultResizeHandlerStyles,
@@ -380,4 +380,4 @@ const FlexWrap: FunctionComponent<FlexWrapProps> = ({
   );
 };
 
-export default FlexWrap;
+export default TransWrap;
